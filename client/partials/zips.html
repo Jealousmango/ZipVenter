@@ -1,0 +1,29 @@
+<h2>Current Zips</h2><br>
+<a href="#">Create a New Zip</a>
+Search: <input ng-model="search">
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Vents</th>
+      <th>Date Posted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat='zip in zips | filter:search'>
+      <td>{{zip.title}}</td>
+      <td>{{zip.vent}}
+      <!-- longDate will need to be changed -->
+      <td>{{zip.createdAt | date:longDate}}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <h3>Add a new Zip</h3>
+  <form>
+    Title: <input ng-model='titleInput' type="text"> <br>
+    Vent: <input ng-model='ventInput' type="text"> <br>
+    Zip: <input ng-model='zipInput' type="text"> <br>
+    <button ng-click="createZip(titleInput, ventInput, zipInput)">Enter</button>
+  </form>
+</div>
