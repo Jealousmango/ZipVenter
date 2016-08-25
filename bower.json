@@ -1,7 +1,7 @@
 {
   "name": "zipventer",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "authors": [
     "Jealousmango <jealousmango@gmail.com>"
   ],
