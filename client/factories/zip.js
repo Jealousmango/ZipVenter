@@ -1,8 +1,18 @@
 app.factory('zipFactory', function($http) {
   var factory = {};
 
-  factory.login = function(zip, cb) {
-    $http.post('/zips', zip).success(function(data){
+  factory.index = function(cb) {
+    $http.get('/zips').success(function(data){
+      cb(data);
+    });
+  };
+  factory.createQuestion = function(newZip, cb) {
+      $http.post('/zips', newZip).success(function(data){
+        cb(data);
+      });
+    };
+  factory.find = function(zip_id, cb) {
+    $http.get('/zips/'+ zip_id).success(function(data){
       cb(data);
     });
   };
