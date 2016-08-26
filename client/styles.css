@@ -3,17 +3,17 @@ body {
 }
 .row {
   background-color: #222;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
   border-radius: 5px;
-  text-align: left;
+  /*text-align: left;*/
 
 }
 li {
   color: white;
 }
 input {
-  width: 100%;
+  width: 40%;
   border-radius: 2px;
   background-color: #666666;
   border: 0px;
