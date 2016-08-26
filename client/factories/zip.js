@@ -6,7 +6,7 @@ app.factory('zipFactory', function($http) {
       cb(data);
     });
   };
-  factory.createQuestion = function(newZip, cb) {
+  factory.createZip = function(newZip, cb) {
       $http.post('/zips', newZip).success(function(data){
         cb(data);
       });

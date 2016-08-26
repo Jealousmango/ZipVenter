@@ -2,7 +2,7 @@ var app = angular.module('zips', ['ngRoute']);
 app.config(function($routeProvider){
   $routeProvider
     .when('/', {
-      templateUrl: 'partials/index.html',
+      templateUrl: 'partials/main.html',
       controller: 'zipsController'
     })
     .when('/zips', {
