@@ -18,7 +18,6 @@ app.controller('zipsController', function($scope, zipFactory, $location) {
   	zipFactory.createZip($scope.newZip, function(data) {
       zipFactory.index(function(zips) {
         $scope.zips = zips;
-        // $window.location.href = '#/zips.html';
         $location.path('/zips');
       });
 		})

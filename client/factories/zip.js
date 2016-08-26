@@ -19,6 +19,5 @@ app.factory('zipFactory', function($http, $window) {
       cb(data);
     });
   };
-
   return factory;
 });

@@ -8,9 +8,10 @@
           <li>Vent: <input ng-model='ventInput' type="text"></li>
           <li>Zip: <input ng-model='zipInput' type="text"></li>
           <!-- <li><button ng-click="createZip(titleInput, ventInput, zipInput)">Enter</button></li> -->
-          <button ng-click="createZip(titleInput, ventInput, zipInput)">Enter</button>
+          <button type="button" class="btn btn-lg btn-primary" ng-click="createZip(titleInput, ventInput, zipInput)">Enter</button>
         </form>
       </ul>
+      <div class="alert alert-danger" role="alert">Zip must be 5 digits long!</div>
   </div>
 </div>
 
