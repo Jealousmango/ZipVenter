@@ -1,0 +1,36 @@
+body {
+  background-color: #666666;
+}
+.row {
+  background-color: #222;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 5px;
+  text-align: left;
+
+}
+li {
+  color: white;
+}
+input {
+  width: 100%;
+  border-radius: 2px;
+  background-color: #666666;
+  border: 0px;
+}
+.button {
+  color: black;
+
+}
+h1 {
+  color: white;
+}
+p {
+  color: white;
+}
+h3 {
+  color: white;
+}
+h2 {
+  color: white;
+}
