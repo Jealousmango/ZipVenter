@@ -4,12 +4,12 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-app.use(session({
- secret:'somesecrettokenhere',
- resave: false,
- saveUninitialized: true,
- maxAge: 5000000
-}));
+// app.use(session({
+//  secret:'somesecrettokenhere',
+//  resave: false,
+//  saveUninitialized: true,
+//  maxAge: 5000000
+// }));
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client')));

@@ -18,14 +18,33 @@ module.exports = {
     // Zip.create(req.body, function(err, newZip) {
     //   if (err) {
     //     return Zip.findOne({ name : req.body.name }, function (err, existingZip){
-    //       req.session.name = existingZip.title;
-    //       req.session.zipId = existingZip._id;
+    //       // req.session.name = existingZip.title;
+    //       // req.session.zipId = existingZip._id;
     //       return res.send(existingZip);
     //     });
     //   }
-    //   req.session.name = newZip.name;
-    //   req.session.zipId = newZip._id;
+    //   // req.session.name = newZip.name;
+    //   // req.session.zipId = newZip._id;
     //   return res.send(newZip);
     // });
   // },
+  create : function(req, res) {
+    Zip.create({
+      title : req.body.title,
+      vent : req.body.vent,
+      zip : req.body.zip,
+    }, function(err, zip) {
+      if (err) return res.send(err);
+      res.send(zip);
+    });
+  },
+  find : function(req, res) {
+    Zip
+      .findOne({ _id : req.params._id })
+      .populate('_zip')
+      .exec(function(err, zip) {
+        if (err) return res.send(err);
+        res.send(zip);
+    });
+  }
 };

@@ -7,5 +7,6 @@ module.exports = function(app) {
 
     app.get('/zips', zips.index);
     app.post('/zips', zips.create);
-    app.get('/zips/:_id', zips.find);
+    // app.get('/zips/:_id', zips.find);
+    app.get('/zips/{{zips.zip}}', zips.find);
 }
