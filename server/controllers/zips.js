@@ -29,6 +29,17 @@ module.exports = {
     // });
   // },
   create : function(req, res) {
+    // var zip = new Zip({
+    //   title : 'whatsupsdfklajsdf',
+    //   vent : 'seattle',
+    //   zip : 983,
+    // })
+    // zip.validate(function(error) {
+    //   console.log('*****here*****')
+    //   console.log(error);
+    //   res.send('ok');
+    // });
+    // zip.save(function(err, d))
     Zip.create({
       title : req.body.title,
       vent : req.body.vent,

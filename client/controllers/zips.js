@@ -16,14 +16,25 @@ app.controller('zipsController', function($scope, zipFactory, $location) {
     $scope.newZip.vent = ventInput;
     $scope.newZip.zip = zipInput;
   	zipFactory.createZip($scope.newZip, function(data) {
-      zipFactory.index(function(zips) {
-        $scope.zips = zips;
-        $location.path('/zips');
-      });
+      if(data.message){
+        var err = data;
+         console.log('Error Inserting New Data');
+         if (err.name == 'ValidationError') {
+           for (field in err.errors) {
+             console.log(err.errors[field].message);
+             $scope.error = err.errors[field].message;
+            }
+          }
+      } else {
+        $scope.error = data
+        zipFactory.index(function(zips) {
+          $scope.zips = zips;
+          $location.path('/zips');
+        });
+      }
 		})
 	};
   zipFactory.index(function(zips) {
-    console.log('hit zipFactory.index in zips controllers');
     $scope.zips = zips;
   });
 });
