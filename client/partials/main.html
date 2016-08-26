@@ -1,1 +1,10 @@
 <h1>ZipVenter</h1>
+<div>
+  <h3>Add a new Zip</h3>
+  <form>
+    Title: <input ng-model='titleInput' type="text"> <br>
+    Vent: <input ng-model='ventInput' type="text"> <br>
+    Zip: <input ng-model='zipInput' type="text"> <br>
+    <button ng-click="createZip(titleInput, ventInput, zipInput)">Enter</button>
+  </form>
+</div>

@@ -1,4 +1,4 @@
-app.factory('zipFactory', function($http) {
+app.factory('zipFactory', function($http, $window) {
   var factory = {};
 
   factory.index = function(cb) {
@@ -10,6 +10,9 @@ app.factory('zipFactory', function($http) {
       $http.post('/zips', newZip).success(function(data){
         cb(data);
       });
+      // $http.get('/zips/'+ zip.zip).success(function(data){
+      //   cb(data);
+      // });
     };
   factory.find = function(zip_id, cb) {
     $http.get('/zips/'+ zip_id).success(function(data){

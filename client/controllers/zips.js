@@ -1,4 +1,4 @@
-app.controller('zipsController', function($scope, zipFactory, $location) {
+app.controller('zipsController', function($scope, zipFactory, $location, $window) {
   // removed sessionFactory
   $scope.zips = [];
   $scope.newZip = {
@@ -11,13 +11,14 @@ app.controller('zipsController', function($scope, zipFactory, $location) {
   //     if (!session) $location.url('/');
   //   })
   // };
-  $scope.createZip = function(titleInput, ventInput, zipInput) {
+  $scope.createZip = function(titleInput, ventInput, zipInput, $window) {
 		$scope.newZip.title = titleInput;
     $scope.newZip.vent = ventInput;
     $scope.newZip.zip = zipInput;
   	zipFactory.createZip($scope.newZip, function(data) {
       zipFactory.index(function(zips) {
         $scope.zips = zips;
+        // $window.location.href = '#/zips.html';
       });
 		})
 	};
